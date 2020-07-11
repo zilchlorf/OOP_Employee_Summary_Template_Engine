@@ -10,11 +10,10 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const Employee = require("./lib/Employee");
+var employees = []
 // Initialize a new employee role
 
-let employee1 = new Employee();
-let employee2 = new Employee();
-let employee3 = new Employee();
+
 inquirer.prompt([
     {
         type: 'input',
@@ -26,14 +25,7 @@ inquirer.prompt([
         name: 'role',
         choices: ['Intern', 'Engineer', 'Manager']
     },
-    // {
-    //     type: 'input',
-    //     name: 'school',
-    //     message: 'Intern, which school did your parents send you to?',
-    //     when: function (response) {
-    //         if (response.role === Intern);
-    //     }
-    // },
+
     // {
     //     type: 'input',
     //     name: 'github',
@@ -60,7 +52,31 @@ inquirer.prompt([
 
 ]).then(function (response) {
     console.log('response is:', response);
+
+    switch (response.role) {
+        case "Engineer":
+            inquirer.prompt({ type: 'input', name: 'github', message: 'hey engineer, what is your github username?' }).then(function (engineer) {
+                var developer = new Engineer(response.name, response.id, response.email, engineer.github);
+                employees.push(developer);
+            })
+            break;
+        case "Intern":
+            inquirer.prompt({ type: 'input', name: 'school', message: 'Intern, which school did your parents send you to?' }).then(function (intern) {
+                var coffeePusher = new Intern(response.name, response.id, response.email, intern.school);
+                employees.push(coffeePusher);
+            })
+            break;
+        case "Manager":
+            break;
+        default:
+            break;
+    }
 });
+
+//push employees to an array, push that array to the render function. then you're done. MAKE SURE THE ORDER OF YOUR NEW CONSTRUCTORS MATCHES THE ORIGINAL CLASS
+
+// *****// pass employees into render function ******
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
