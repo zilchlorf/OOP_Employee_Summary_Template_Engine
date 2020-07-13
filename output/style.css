@@ -1,0 +1,37 @@
+.team-heading {
+    background-color:olivedrab;
+}
+body {
+    background-color: gray
+}
+h1 {
+  font-weight: bolder;
+   font-size: 6rem;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+  font-style: oblique;
+  text-shadow: 4px 4px rgb(168, 165, 165);
+}
+h2.card-title {
+font-size: 4rem;
+}
+.team-area {
+    background-color: darkgray;
+}
+
+.employee-card {
+background-color: tan;
+}
+
+.card-title {
+    font-weight: 800;
+  font-family: monospace;
+  font-style: italic;
+    font-size: 2rem;
+}
+.list-group-item {
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+
+}
