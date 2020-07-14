@@ -9,6 +9,8 @@ Table of Contents:
 - [tests](#tests)
 - [Questions](#Questions)
 
+![image](https://user-images.githubusercontent.com/63215148/87367776-c3a9ab00-c530-11ea-8c66-8c1079a3f0b9.png)
+
 
 # Project_Description:
 The project prompts the user to build an engineering team consisting of a manager and any number of engineers and interns. 
